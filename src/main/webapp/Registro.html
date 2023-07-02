@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mi Pagina Web</title>
+</head>
+<body>
+	<h1 style="text-align: center">Registro</h1>
+	<form action="RecogeDatos.jsp" method="post">
+		<!-- el metodo post significa que la informacion no va a aparecer en la URL de la pagina  -->
+
+		<table width="35%" border="0">
+			<tr>
+				<td width="13%"><label for="nombre">Nombre: </label></td>
+				<td width="87%"><input type="text" name="nombre" id="nombre"></td>
+				<!-- el label es una etiqueta que se llama nombre. el for se utiliza para asociar esta etiqueta con el ID del input abajo que es de tipo text. el name de la linea2 es el argumento que se le va a pasar al jsp  -->
+			</tr>
+			<tr>
+				<td><label for="apellido">Apellido</label></td>
+				<td><input type="text" name="apellido" id="apellido"></td>
+			</tr>
+			<tr>
+				<td><label for="usuario">Usuario</label></td>
+				<td><input type="text" name="usuario" id="usuario"></td>
+			</tr>
+			<tr>
+				<td><label for="contr">Contrasenia</label></td>
+				<td><input type="password" name="contr" id="contr"></td>
+			</tr>
+			<tr>
+				<td><label for="pais">Pais</label></td>
+				<td><select name="pais" id="pais">
+						<option>Bolivia</option>
+						<option>Chile</option>
+						<option>Narnia</option>
+						<option>Matrix</option>
+						<option>Imaginacionlandia</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Tecnologias:</td>
+				<td><label><input type="radio" name="tecnologias"
+						value="Java" id="tecnologias_0">Java </label> <label><input
+						type="radio" name="tecnologias" value="PHP" id="tecnologias_1">PHP</label>
+					<label><input type="radio" name="tecnologias"
+						value="JavaScript" id="tecnologias_2">JavaScript</label> <!-- el tipo radio es como los radios en java, botones para marcar. para que solo uno pueda ser marcado y no varios, se los tiene que agrupar como en java para eso es la etiqueta name con el mismo valor en todas las opciones. mientras que el valor de value es lo que se va a mandar al jsp. pero el name es lo que se manda al jsp -->
+				</td>
+			</tr>
+			<tr>
+				<td colspan "2" align="center"><input type="submit"
+					name="button" id="button" value="Enviar"></td><!-- creo que aqui es el name el que se pasa al jsp -->
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

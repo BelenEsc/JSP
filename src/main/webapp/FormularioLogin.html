@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mi Pagina Login</title>
+</head>
+<body>
+	<h1 style="text-align: center">Login</h1>
+	<form action="Login.jsp" method="post">
+		<!-- el metodo post significa que la informacion no va a aparecer en la URL de la pagina  -->
+
+		<table width="35%" border="0">
+			<tr>
+				<td><label for="usuario">Usuario</label></td>
+				<td><input type="text" name="usuario" id="usuario"></td>
+			</tr>
+			<tr>
+				<td><label for="contr">Contrasenia</label></td>
+				<td><input type="text" name="contr" id="contr"></td>
+			</tr>
+			<tr>
+				<td colspan "2" align="center"><input type="submit"
+					name="button" id="button" value="Enviar"></td><!-- creo que aqui es el name el que se pasa al jsp -->
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
