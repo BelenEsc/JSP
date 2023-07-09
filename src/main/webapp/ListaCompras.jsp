@@ -21,22 +21,31 @@
 			<label><input type="checkbox" name="articulos" value="tomate">Tomate</label><br>
 		</p>
 		<p>
-			<input type="submit" name="button" id="button" value="Enviar"> 
+			<input type="submit" name="button" id="button" value="Enviar">
 			<!-- creo que aqui es el name el que se pasa al jsp -->
 		</p>
 	</form>
 	<h2>Carro de compras</h2>
-	<ol>
-	<%
-	String []elementos=	request.getParameterValues("articulos");
-	
-	if (elementos != null) {
-		for (String x : elementos) {
-			out.println("<li>"+x+"</li>");
+		<%
+		List<String> carritoCompra = (List<String>) session.getAttribute("carrito");
+		if (carritoCompra == null) {
+			carritoCompra = new ArrayList<>();
+			session.setAttribute("carrito", carritoCompra);
 		}
-	}
-	%>
-</ol>
+
+		String[] elementos = request.getParameterValues("articulos");
+
+		if (elementos != null) {
+			for (String x : elementos) {
+				carritoCompra.add(x);
+
+			}
+		}
+		
+		for (String j: carritoCompra){
+			out.println("<li>" + j + "</li>");
+		}
+		%>
 
 </body>
 </html>
